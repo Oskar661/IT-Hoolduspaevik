@@ -81,3 +81,19 @@ README.md selgitab projekti eesmärki, struktuuri ja kasutamist.
 Kõik tekstid kasutajaliideses on eesti keeles.
 
 Kood (klassid, funktsioonid) on inglise keeles.
+
+
+## Linux (Ubuntu)
+
+Rakendust testiti ja käivitati Ubuntu operatsioonisüsteemis.
+
+Tehtud tegevused ja tähelepanekud:
+
+- Projekt klooniti kausta `~/Documents/projects`
+- Rakendus käivitati käsurealt
+- Vajadusel kasutati `python3` käsku (mitte `python`)
+- Kontrolliti failiteid (Linux on tõstutundlik – nt `File.txt` ≠ `file.txt`)
+- Vajadusel lisati käivitusõigused käsuga `chmod +x`
+- Projekt uuendati GitHubist käsuga `git pull`
+
+Rakendus töötab edukalt Ubuntu keskkonnas.
