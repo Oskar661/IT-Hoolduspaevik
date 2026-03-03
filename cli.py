@@ -2,6 +2,7 @@ from models.log_entry import LogEntry
 
 def run_cli(logbook):
     while True:
+        print("Tere!")
         print("\n=== CLI MENÜÜ ===")
         print("1. Lisa kirje")
         print("2. Kustuta kirje")
