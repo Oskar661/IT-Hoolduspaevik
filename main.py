@@ -1,32 +1,32 @@
+import os
 from models.log_book import LogBook
 from cli import run_cli
-from import_csv import import_csv_file
 
 def main():
     logbook = LogBook()
-    logbook.load_from_file()
+    filename = "logbook.json"
 
-    while True:
-        print("\n=== IT HOOLDUSPÄEVIK ===")
-        print("1. Kasuta olemasolevat logbook.json")
-        print("2. Impordi CSV fail")
-        print("0. Välju")
-        choice = input("Vali tegevus: ").strip()
+    # Kui fail olemas
+    if os.path.exists(filename):
 
-        if choice == "1":
-            run_cli(logbook)
-            break
-        elif choice == "2":
-            filepath = input("Sisesta CSV faili nimi (näiteks sample_import.csv): ").strip()
-            import_csv_file(filepath, logbook)
-            input("Vajuta ENTER, et jätkata CLI-ga...")
-            run_cli(logbook)
-            break
-        elif choice == "0":
-            print("Programm suletud.")
-            break
+        logbook.load_from_file()
+
+        if logbook.entries:
+            print("Leiti olemasolev logbook.json fail koos kirjetega.")
+            choice = input("Kas soovid neid kasutada? (Y/N): ").strip().upper()
+
+            if choice == "Y":
+                print("Laen olemasolevad kirjed...")
+            else:
+                logbook.entries = []
+                print("Alustan tühja logiraamatuga.")
         else:
-            print("Vale valik! Proovi uuesti.")
+            print("logbook.json fail on olemas, kuid see on tühi.")
+    else:
+        print("logbook.json faili ei leitud. Luuakse uus fail.")
+
+    input("Vajuta ENTER, et jätkata...")
+    run_cli(logbook)
 
 if __name__ == "__main__":
     main()
