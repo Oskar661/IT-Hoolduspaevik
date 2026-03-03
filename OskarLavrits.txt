@@ -1,0 +1,5 @@
+Script started on 2026-03-03 14:43:09+02:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+[?2004h]0;oss@oss-VMware20-1: ~/Documents/projects/IT-Hoolduspaevik[01;32moss@oss-VMware20-1[00m:[01;34m~/Documents/projects/IT-Hoolduspaevik[00m$ exit
+[?2004lexit
+
+Script done on 2026-03-03 14:43:28+02:00 [COMMAND_EXIT_CODE="0"]
